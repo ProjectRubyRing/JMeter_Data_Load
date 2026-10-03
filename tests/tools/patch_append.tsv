@@ -1,0 +1,29 @@
+T	categories	3	N
+T	products	3	N
+T	order_items	3	N
+T	roles	3	N
+T	user_roles	3	N
+T	employees	3	N
+T	shops	3	N
+T	shop_sales	3	N
+T	all_types	3	N
+T	customers	4	500
+T	customers	6	NONE
+T	customers	7	N
+T	customers	8	DELETE_GENERATED
+T	orders	4	1000
+T	orders	6	NONE
+T	orders	7	N
+T	orders	8	DELETE_WHERE
+T	orders	9	note = 'JMTEST'
+T	legacy	4	300
+T	legacy	6	DELETE
+T	legacy	7	Y
+T	legacy	8	RESTORE
+C	customers	email	TEMPLATE	jm${seq:6}@example.com	1	1	0	Y
+C	customers	uuid	UUID	UPPER			0	N
+C	orders	order_no	TEMPLATE	JM${seq:8}	1	1	0	Y
+C	orders	note	FIXED	JMTEST			0	N
+C	orders	status	CYCLE	new|paid|shipped	2		0	N
+C	orders	total	RANDOM_DECIMAL	0.01	99999.99		0	N
+C	legacy	code_ci	TEMPLATE	X${seq:6}	1	1	0	Y

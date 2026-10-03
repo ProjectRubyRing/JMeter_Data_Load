@@ -1,0 +1,24 @@
+# =============================================================================
+# MySQL 接続設定 (mysql の option file 形式)
+#   1. このファイルを client.cnf としてコピーし、値を設定してください
+#        cp conf/client.cnf.sample conf/client.cnf
+#   2. パスワードを含むため必ず所有者のみ読み書き可能にしてください
+#        chmod 600 conf/client.cnf
+#      ※ 他ユーザーが書込み可能な設定ファイルは mysql が黙って無視します
+# =============================================================================
+[client]
+# Aurora のクラスターエンドポイント (書込み用) を指定します
+host=xxxxx.cluster-xxxxxxxxxxxx.ap-northeast-1.rds.amazonaws.com
+port=3306
+user=admin
+# 注意: # や ; を含むパスワードは必ず " で囲んでください (囲まないと # 以降がコメント扱いになります)
+password="ChangeMe#123"
+
+# TLS (Aurora は TLS 接続を推奨)
+ssl-mode=REQUIRED
+# サーバー証明書まで検証する場合は RDS の CA バンドルを指定して VERIFY_IDENTITY にします
+#   curl -o /path/to/global-bundle.pem https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+# ssl-ca=/path/to/global-bundle.pem
+# ssl-mode=VERIFY_IDENTITY
+
+default-character-set=utf8mb4

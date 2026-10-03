@@ -1,0 +1,43 @@
+T	categories	4	20
+T	shops	4	50
+T	roles	4	20
+T	customers	4	1000
+T	customers	11	100
+T	products	4	300
+T	orders	4	2000
+T	order_items	4	5000
+T	user_roles	4	1000
+T	employees	4	100
+T	shop_sales	4	700
+T	legacy	4	500
+C	categories	name	RANDOM_STRING	2	6	kanji	0	N
+C	customers	name	RANDOM_STRING	2	8	zenkaku	0	N
+C	customers	kana	RANDOM_STRING	3	10	kata	20	N
+C	customers	email	TEMPLATE	user${seq:6}@example.com	1	1	0	Y
+C	customers	points	RANDOM_INT	-100	50000		0	N
+C	customers	birthday	RANDOM_DATE	1950-01-01	2005-12-31		10	N
+C	customers	last_login	RANDOM_DATETIME	NOW-30d	NOW	3	25	N
+C	customers	memo	RANDOM_STRING	0	30	ascii	50	N
+C	customers	status	LIST	active|suspended|closed	80|15|5		0	Y
+C	customers	created_at	SEQ_DATETIME	2025-01-01 00:00:00	1h	1	0	N
+C	products	name	TEMPLATE	商品_${hira:3}_${seq:5}	1	1	0	N
+C	products	price	RANDOM_DECIMAL	1	9999.99	2	0	N
+C	products	weight	RANDOM_DECIMAL	0.1	99.9	1	30	N
+C	products	tags	LIST	new|sale|limited|new,sale|			20	N
+C	products	attrs	TEMPLATE	{"color": "${list:red|blue|green}", "size": ${int:1,10}}	1	1	10	N
+C	products	location	FIXED	POINT(35.681 139.767)	4326		0	N
+C	products	flags	FIXED	b'10101010'			0	N
+C	products	image	RANDOM_BYTES	0	64		10	N
+C	orders	status	LIST	new|paid|shipped	50|30|20		0	N
+C	orders	note	RANDOM_STRING	1	50	hira	30	N
+C	orders	ordered_at	RANDOM_DATETIME	2026-01-01 00:00:00	TODAY		0	N
+C	orders	total	RANDOM_DECIMAL	100	500000		0	N
+C	order_items	qty	RANDOM_INT	1	10		0	N
+C	order_items	unit_price	RANDOM_DECIMAL	10	9999.99	2	0	N
+C	roles	role_name	TEMPLATE	role_${seq:4}	1	1	0	N
+C	shops	region_cd	SEQ	1	1	5	0	Y
+C	shop_sales	sold_on	SEQ_DATETIME	2026-01-01	1d	7	0	N
+C	shop_sales	amount	RANDOM_INT	100	99999		0	N
+C	legacy	code_ci	UNIQUE_STRING	10	alnum	L-	0	Y
+C	legacy	sj	RANDOM_STRING	2	5	hankana	0	N
+C	employees	manager_id	NULL				0	N

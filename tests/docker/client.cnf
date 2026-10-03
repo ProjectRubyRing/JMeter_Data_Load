@@ -1,0 +1,7 @@
+[client]
+host=dbtool-mysql
+port=3306
+user=admin
+password="Admin#Pass2026"
+ssl-mode=REQUIRED
+default-character-set=utf8mb4

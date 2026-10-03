@@ -1,0 +1,37 @@
+T	categories	4	50
+T	customers	4	100
+T	customers	8	RESTORE
+T	customers	7	N
+T	products	4	100
+T	products	8	DELETE_GENERATED
+T	orders	4	100
+T	orders	5	5
+T	order_items	3	N
+T	roles	3	N
+T	user_roles	3	N
+T	employees	3	N
+T	shops	3	N
+T	shop_sales	3	N
+T	all_types	3	N
+T	legacy	4	100
+C	categories	code	LIST	A|B			0	N
+C	categories	name	NULL				0	N
+C	customers	email	TEMPLATE	${seq:300}@x	1	1	0	N
+C	customers	points	RANDOM_INT	0	99999999999		0	N
+C	customers	status	LIST	active|deleted			0	N
+C	customers	birthday	RANDOM_DATE	2026-02-30	TODAY		0	N
+C	customers	is_vip	RANDOM_INT	0	1		5	N
+C	customers	last_login	RANDOM_DATETIME	2030-01-01 00:00:00	2040-01-01 00:00:00	3	0	N
+C	customers	uuid	DEFAULT				0	N
+C	products	price	FIXED	12.345			0	N
+C	products	weight	RANDOM_DECIMAL	1	2	1	0	X
+C	products	name	RANDOM_STRING	2	5	kanji	0	N
+C	products	attrs	FIXED	{"a": 1,}			0	N
+C	products	location	FIXED	POINT(1 2 3)	4326		0	N
+C	products	category_id	FOO	x			0	N
+C	orders	customer_id	REF	customers.id	RANDOM		0	N
+C	orders	ordered_at	SEQ_DATETIME	2026-01-01 00:00:00	0s	1	0	N
+C	legacy	sj	RANDOM_STRING	2	5	kanji	0	N
+C	legacy	code_ci	RANDOM_STRING	1	1	digit	0	N
+C	legacy	id	UNIQUE_INT	1	50		0	N
+C	legacy	bin16	RANDOM_BYTES	1	20		0	N

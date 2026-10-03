@@ -1,0 +1,5 @@
+# RHEL 9.8 (UBI) + RHEL標準 mysql 8.0 クライアント : dbtool.sh の動作確認用
+FROM registry.access.redhat.com/ubi9/ubi:9.8
+RUN dnf -y install mysql gzip findutils procps-ng diffutils which && dnf clean all
+ENV LANG=C.UTF-8
+WORKDIR /work
